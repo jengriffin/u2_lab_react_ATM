@@ -3,7 +3,6 @@ import './styles/App.css'
 import Account from './components/Account'
 
 const App = () => {
-
   return (
     <div id="content">
       <div id="nav">
@@ -14,6 +13,7 @@ const App = () => {
       </div>
       <div className="bank">
         <Account name="Checking" />
+        <Account name="Savings" />
       </div>
     </div>
   )

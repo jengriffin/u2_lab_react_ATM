@@ -2,7 +2,7 @@ import { useState } from 'react'
 import '../styles/App.css'
 
 const Account = (props) => {
-  let [amount, setAmount] = useState("")
+  let [amount, setAmount] = useState('')
   let [balance, setBalance] = useState(0)
 
   const handleClick = (event) => {
@@ -11,6 +11,15 @@ const Account = (props) => {
       console.log('Not a number')
     } else {
       setBalance(balance + Number(amount))
+    }
+    setAmount(0)
+  }
+  const withdraw = (event) => {
+    event.preventDefault()
+    if (isNaN(amount)) {
+      console.log('Not a number')
+    } else {
+      setBalance(balance - Number(amount))
     }
     setAmount(0)
   }
@@ -40,6 +49,14 @@ const Account = (props) => {
           type="submit"
           value="Deposit"
           onClick={handleClick}
+        />
+      </div>
+      <div>
+        <input
+          className="btn"
+          type="submit"
+          value="Withdraw"
+          onClick={withdraw}
         />
       </div>
     </div>

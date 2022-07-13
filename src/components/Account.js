@@ -16,7 +16,7 @@ const Account = (props) => {
   }
   const withdraw = (event) => {
     event.preventDefault()
-    if (isNaN(amount) || amount <= 0) {
+    if (isNaN(amount) || balance < amount || amount <= 0) {
       console.log('Not a number')
     } else {
       setBalance(balance - Number(amount))
